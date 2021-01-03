@@ -5,6 +5,8 @@ INSERT INTO institutions (id, name, description) VALUES (null, '"Dbam o Zdrowie"
 INSERT INTO institutions (id, name, description) VALUES (null, '"A kogo"', 'Pomoc wybudzaniu dzieci ze śpiączki');
 INSERT INTO institutions (id, name, description) VALUES (null, '"Dla dzieci"', 'Pomoc dzieciom z ubogich rodzin');
 INSERT INTO institutions (id, name, description) VALUES (null, '"Bez domu"', 'Pomoc dla osób nie posiadających miejsca zamieszkania');
+INSERT INTO institutions (id, name, description) VALUES (null, '"TEST"', 'Test');
+# INSERT INTO institutions (id, name, description) VALUES (null, '"TEST2"', 'Test2');
 INSERT INTO categories (id, name) VALUES (null, 'ubrania, które nadają się do ponownego użycia');
 INSERT INTO categories (id, name) VALUES (null, 'ubrania do wyrzucenia');
 INSERT INTO categories (id, name) VALUES (null, 'zabawki');

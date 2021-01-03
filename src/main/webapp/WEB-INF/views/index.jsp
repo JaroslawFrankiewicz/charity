@@ -16,7 +16,7 @@
 <section class="stats">
     <div class="container container--85">
         <div class="stats--item">
-            <em>13</em>
+            <em>${numOfSacks}</em>
 
             <h3>Oddanych worków</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum
@@ -24,7 +24,7 @@
         </div>
 
         <div class="stats--item">
-            <em>5</em>
+            <em>${numOfGifts}</em>
             <h3>Przekazanych darów</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas
                 quam.</p>
@@ -86,23 +86,16 @@
             <c:forEach items="${institutions}" var="institution" varStatus="loopCounter">
                 <c:if test="${loopCounter.index % 2 == 0}">
                     <li>
-                        <div class="col">
-                            <div class="title">
-                                Fundacja ${institutions[loopCounter.index].name}
-                            </div>
-                            <div class="subtitle">
-                                Cel i misja: ${institutions[loopCounter.index].description}
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="title">
-                                Fundacja ${institutions[loopCounter.index+1].name}
-
-                            </div>
-                            <div class="subtitle">
-                                Cel i misja: ${institutions[loopCounter.index+1].description}
-                            </div>
-                        </div>
+                </c:if>
+                <div class="col">
+                    <div class="title">
+                        Fundacja "${institutions[loopCounter.index].name}"
+                    </div>
+                    <div class="subtitle">
+                        Cel i misja: ${institutions[loopCounter.index].description}
+                    </div>
+                </div>
+                <c:if test="${loopCounter.index % 2 == 1}">
                     </li>
                 </c:if>
             </c:forEach>
