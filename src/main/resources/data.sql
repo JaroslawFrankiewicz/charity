@@ -1,0 +1,15 @@
+use charity_donation;
+INSERT INTO role (id, name) VALUES (NULL,'ROLE_USER');
+INSERT INTO role (id, name) VALUES (NULL, 'ROLE_ADMIN');
+INSERT INTO institutions (id, name, description) VALUES (null, '"Dbam o Zdrowie"', 'Pomoc osobom znajdującym się w trudnej sytuacji życiowej');
+INSERT INTO institutions (id, name, description) VALUES (null, '"A kogo"', 'Pomoc wybudzaniu dzieci ze śpiączki');
+INSERT INTO institutions (id, name, description) VALUES (null, '"Dla dzieci"', 'Pomoc dzieciom z ubogich rodzin');
+INSERT INTO institutions (id, name, description) VALUES (null, '"Bez domu"', 'Pomoc dla osób nie posiadających miejsca zamieszkania');
+INSERT INTO categories (id, name) VALUES (null, 'ubrania, które nadają się do ponownego użycia');
+INSERT INTO categories (id, name) VALUES (null, 'ubrania do wyrzucenia');
+INSERT INTO categories (id, name) VALUES (null, 'zabawki');
+INSERT INTO categories (id, name) VALUES (null, 'książki');
+INSERT INTO categories (id, name) VALUES (null, 'inne');
+INSERT INTO donation (city, pick_up_comment, pick_up_date, pick_up_time, quantity, street, zipcode) VALUES ('Wrocław', now(), now(), now(), 11, 'Widok', '51-111');
+INSERT INTO users (email, first_name, last_name, username, password) VALUES ('frantz12@wp.pl', 'Jarosław', 'Frankiewicz', 'frantz', '$2y$12$pCt916J9z.ntKQne.7ArYeoVkKBV.Z4Qfoz63QQN/mDHA4JzQ5lX6');
+INSERT INTO user_role (ROLE_ID, USER_ID) VALUES (2,1);

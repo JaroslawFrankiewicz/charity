@@ -16,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-//import pl.coderslab.charity.controller.TypeConverter;
+//import pl.coderslab.controller.TypeConverter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -25,10 +25,10 @@ import java.util.Locale;
 
 
 @Configuration
-@EnableWebMvc
-@ComponentScan(basePackages = "pl.coderslab")
-@EnableJpaRepositories(basePackages = "pl.coderslab.charity.repository")
-@EnableTransactionManagement
+//@EnableWebMvc
+//@ComponentScan(basePackages = "pl.coderslab.charity")
+//@EnableJpaRepositories(basePackages = "pl.coderslab.charity.repository")
+//@EnableTransactionManagement
     public class AppConfig implements WebMvcConfigurer {
 
         @Bean
@@ -40,29 +40,29 @@ import java.util.Locale;
             return viewResolver;
         }
 
-        @Override
-        public void configureDefaultServletHandling(
-                DefaultServletHandlerConfigurer configurer) {
-            configurer.enable();
-        }
+//        @Override
+//        public void configureDefaultServletHandling(
+//                DefaultServletHandlerConfigurer configurer) {
+//            configurer.enable();
+//        }
 
-        @Bean
-        public DataSource dataSource() {
-            return DataSourceBuilder.create().build();
-        }
+//        @Bean
+//        public DataSource dataSource() {
+//            return DataSourceBuilder.create().build();
+//        }
 
-        @Bean
-        public LocalEntityManagerFactoryBean entityManagerFactory() {
-            LocalEntityManagerFactoryBean entityManagerFactoryBean
-                    = new LocalEntityManagerFactoryBean();
-            entityManagerFactoryBean.setPersistenceUnitName("charity_donation");
-            return entityManagerFactoryBean;
-        }
+//        @Bean
+//        public LocalEntityManagerFactoryBean entityManagerFactory() {
+//            LocalEntityManagerFactoryBean entityManagerFactoryBean
+//                    = new LocalEntityManagerFactoryBean();
+//            entityManagerFactoryBean.setPersistenceUnitName("charity_donation");
+//            return entityManagerFactoryBean;
+//        }
 
-        @Bean
-        public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-            return new JpaTransactionManager(entityManagerFactory);
-        }
+//        @Bean
+//        public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+//            return new JpaTransactionManager(entityManagerFactory);
+//        }
 
         @Bean(name = "localeResolver")
         public LocaleContextResolver getLocaleContextResolver() {

@@ -1,5 +1,6 @@
 package pl.coderslab.charity.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -15,11 +16,17 @@ import pl.coderslab.charity.services.SpringDataUserDetailsService;
 @Order(1)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    final AuthenticationSuccessHandler authenticationSuccessHandler;
+
+    final
+    AuthenticationSuccessHandler authenticationSuccessHandler;
 
     public WebSecurityConfig(AuthenticationSuccessHandler authenticationSuccessHandler) {
         this.authenticationSuccessHandler = authenticationSuccessHandler;
     }
+
+//    public WebSecurityConfig(AuthenticationSuccessHandler authenticationSuccessHandler) {
+//        this.authenticationSuccessHandler = authenticationSuccessHandler;
+//    }
 
     @Bean
     public SpringDataUserDetailsService customUserDetailsService() {

@@ -1,13 +1,10 @@
 package pl.coderslab.charity.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -16,6 +13,7 @@ import java.util.Set;
 @Entity
 @Table(name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,6 +25,10 @@ public class User {
     //    @Length(min = 6, message = "*Your password must have at least 6 characters")
     @NotEmpty(message = "Please provide your password")
     private String password;
+
+    @Transient
+    @NotEmpty(message = "Please retype your password")
+    private String password2;
 
     @Size(min = 2)
     @NotEmpty(message = "Please provide your first name")
@@ -43,4 +45,8 @@ public class User {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "donation_id", referencedColumnName = "id")
+    private Donation donation;
 }
