@@ -42,13 +42,14 @@ public class Donation {
     private String city;
 
     @NotNull
-    private String zipcode;
-
-    @NotNull
-    private LocalDate pickUpDate;
+    private String zipCode;
 
     @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate pickUpDate;
+
+    @NotNull
+    @DateTimeFormat(pattern = "HH:mm")
     private LocalTime pickUpTime;
 
     @NotNull

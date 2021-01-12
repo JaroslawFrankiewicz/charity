@@ -20,8 +20,11 @@
     <h2 id="login">Zaloguj się</h2>
     <form>
         <div class="form-group">
+<%--            <label>--%>
+<%--                <input type="email" name="email" placeholder="Email" />--%>
+<%--            </label>--%>
             <label>
-                <input type="email" name="email" placeholder="Email" />
+                <input type="text" name="username" placeholder="username" />
             </label>
         </div>
         <div class="form-group">
@@ -38,7 +41,7 @@
     </form>
 </section>
     <%@include file="footer.jsp" %>
-    <script src="<c:url value="${pageContext.request.contextPath}resources/js/app.js"/>"></script>
+    <script src="<c:url value="${pageContext.request.contextPath}/resources/js/app.js"/>"></script>
 </body>
 </html>
 

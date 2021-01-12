@@ -6,7 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import pl.coderslab.charity.entity.Institution;
-import pl.coderslab.charity.services.HomeService;
+import pl.coderslab.charity.repository.DonationRepository;
+import pl.coderslab.charity.repository.InstitutionRepository;
 
 import java.util.List;
 
@@ -14,11 +15,13 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    private final HomeService homeService;
+    private final InstitutionRepository institutionRepository;
+    private final DonationRepository donationRepository;
 
     @Autowired
-    public HomeController(HomeService homeService) {
-        this.homeService = homeService;
+    public HomeController(InstitutionRepository institutionRepository, DonationRepository donationRepository) {
+        this.institutionRepository = institutionRepository;
+        this.donationRepository = donationRepository;
     }
 
 
@@ -29,14 +32,15 @@ public class HomeController {
 
     @ModelAttribute("institutions")
     List<Institution> institutionList() {
-        return homeService.getAllInstitutions();
+        return institutionRepository.findAll();
     }
 
     @GetMapping("/")
     public String homeAction(Model model){
-        int numOfSacks = homeService.getNumberOfSacks();
-        int numOfGifts = homeService.countGifts();
+        int numOfSacks = donationRepository.findDonationsQuantity();
         model.addAttribute("numOfSacks", numOfSacks);
+
+        int numOfGifts = donationRepository.findDonationsCount();
         model.addAttribute("numOfGifts", numOfGifts);
         return "index";
     }

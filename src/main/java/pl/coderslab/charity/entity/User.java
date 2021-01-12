@@ -22,13 +22,13 @@ public class User {
     @NotEmpty(message = "*Please provide a username")
     private String username;
 
-    //    @Length(min = 6, message = "*Your password must have at least 6 characters")
+//    @Length(min = 6, message = "*Your password must have at least 6 characters")
     @NotEmpty(message = "Please provide your password")
     private String password;
 
     @Transient
     @NotEmpty(message = "Please retype your password")
-    private String password2;
+    private String passwordConfirm;
 
     @Size(min = 2)
     @NotEmpty(message = "Please provide your first name")

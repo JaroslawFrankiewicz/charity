@@ -59,7 +59,10 @@
         </div>
     </div>
 
-    <a href="${pageContext.request.contextPath}/register" class="btn btn--large">Załóż konto</a>
+    <a href="${pageContext.request.contextPath}register" class="btn btn--large">Załóż konto</a>
+    <h1> LUB </h1>
+    <a href="${pageContext.request.contextPath}form" class="btn btn--large">Wyślij bez konta</a>
+
 </section>
 
 <section class="about-us">
@@ -89,7 +92,7 @@
                 </c:if>
                 <div class="col">
                     <div class="title">
-                        Fundacja "${institutions[loopCounter.index].name}"
+                        Fundacja ${institutions[loopCounter.index].name}
                     </div>
                     <div class="subtitle">
                         Cel i misja: ${institutions[loopCounter.index].description}
@@ -130,6 +133,6 @@
 
 </section>
 <%@include file="footer.jsp" %>
-<script src="<c:url value="${pageContext.request.contextPath}resources/js/app.js"/>"></script>
+<script src="<c:url value="${pageContext.request.contextPath}/resources/js/app.js"/>"></script>
 </body>
 </html>

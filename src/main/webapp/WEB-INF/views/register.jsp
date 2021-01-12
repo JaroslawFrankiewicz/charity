@@ -18,18 +18,18 @@
 <header>
     <%@ include file="header.jsp" %>
 </header>
-<script>
-    function myFunction(){
-        const x = document.getElementsByName("password")[0].value;
-        const y = document.getElementsByName("password2")[1].value;
-        const ok = true;
-        if(x !== y)
-        {
-            alert("Passwords do not match");
-        }
-        return ok;
-    }
-</script>
+<%--<script>--%>
+<%--    function myFunction(){--%>
+<%--        const x = document.getElementsByName("password")[0].value;--%>
+<%--        const y = document.getElementsByName("passwordConfirm")[1].value;--%>
+<%--        const ok = true;--%>
+<%--        if(x !== y)--%>
+<%--        {--%>
+<%--            alert("Passwords do not match");--%>
+<%--        }--%>
+<%--        return ok;--%>
+<%--    }--%>
+<%--</script>--%>
 <section class="login-page">
     <h2 id="register">Załóż konto</h2>
     <form:form modelAttribute="newUser" action="${pageContext.request.contextPath}/register" method="POST" htmlEscape="true">
@@ -43,6 +43,11 @@
         <form:input type="text" class="form-control" id="lastName" name="lastName" placeholder="podaj nazwisko" required="required" path="lastName"/>
         <form:errors path="lastName"/>
     </div>
+        <div class="form-group">
+            <label for="lastName"></label>
+            <form:input type="text" class="form-control" id="username" name="username" placeholder="podaj login" required="required" path="username"/>
+            <form:errors path="lastName"/>
+        </div>
     <div class="form-group">
         <label for="email"></label>
         <form:input type="text" class="form-control" id="email" name="email" placeholder="podaj email" required="required" path="email"/>
@@ -54,9 +59,9 @@
         <form:errors path="password"/>
     </div>
     <div class="form-group">
-        <form:input type="password" class="form-control" id="password2" name="password2" placeholder="Powtórz hasło" required="required" path="password2"/>
-<%--                <c:if test="${password2!=password}">Wpisałeś różne hasła</c:if>--%>
-        <form:errors path="password2"/>
+        <form:input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Powtórz hasło" required="required" path="passwordConfirm"/>
+<%--              <c:if test="${passwordConfirm!=password}">Wpisałeś różne hasła</c:if>--%>
+        <form:errors path="passwordConfirm"/>
     </div>
 
         <div class="form-group form-group--buttons">

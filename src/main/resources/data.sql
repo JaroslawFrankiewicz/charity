@@ -6,12 +6,13 @@ INSERT INTO institutions (id, name, description) VALUES (null, '"A kogo"', 'Pomo
 INSERT INTO institutions (id, name, description) VALUES (null, '"Dla dzieci"', 'Pomoc dzieciom z ubogich rodzin');
 INSERT INTO institutions (id, name, description) VALUES (null, '"Bez domu"', 'Pomoc dla osób nie posiadających miejsca zamieszkania');
 INSERT INTO institutions (id, name, description) VALUES (null, '"TEST"', 'Test');
-# INSERT INTO institutions (id, name, description) VALUES (null, '"TEST2"', 'Test2');
+INSERT INTO institutions (id, name, description) VALUES (null, '"TEST2"', 'Test2');
 INSERT INTO categories (id, name) VALUES (null, 'ubrania, które nadają się do ponownego użycia');
 INSERT INTO categories (id, name) VALUES (null, 'ubrania do wyrzucenia');
 INSERT INTO categories (id, name) VALUES (null, 'zabawki');
 INSERT INTO categories (id, name) VALUES (null, 'książki');
 INSERT INTO categories (id, name) VALUES (null, 'inne');
-INSERT INTO donation (city, pick_up_comment, pick_up_date, pick_up_time, quantity, street, zipcode) VALUES ('Wrocław', now(), now(), now(), 11, 'Widok', '51-111');
+INSERT INTO donation (city, pick_up_comment, pick_up_date, pick_up_time, quantity, street, zip_code) VALUES ('Wrocław', now(), now(), now(), 5, 'Widok', '51-111');
+INSERT INTO donation (city, pick_up_comment, pick_up_date, pick_up_time, quantity, street, zip_code) VALUES ('Wrocław', now(), now(), now(), 11, 'Widok', '51-111');
 INSERT INTO users (email, first_name, last_name, username, password) VALUES ('frantz12@wp.pl', 'Jarosław', 'Frankiewicz', 'frantz', '$2y$12$pCt916J9z.ntKQne.7ArYeoVkKBV.Z4Qfoz63QQN/mDHA4JzQ5lX6');
 INSERT INTO user_role (ROLE_ID, USER_ID) VALUES (2,1);

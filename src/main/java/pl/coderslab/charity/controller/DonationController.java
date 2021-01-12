@@ -1,7 +1,7 @@
 package pl.coderslab.charity.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +12,7 @@ import pl.coderslab.charity.repository.CategoryRepository;
 import pl.coderslab.charity.repository.DonationRepository;
 import pl.coderslab.charity.repository.InstitutionRepository;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -27,25 +28,51 @@ public class DonationController {
         this.categoryRepository = categoryRepository;
         this.institutionRepository = institutionRepository;
     }
+    @ModelAttribute("donation")
+    public Donation donationForm() {
+        return new Donation();
+    }
+
+    @ModelAttribute("institutions")
+    public List<Institution> addInstitutions() {
+        return institutionRepository.findAll();
+    }
+
+    @ModelAttribute("categories")
+    public List<Category> addCategories() {
+        return categoryRepository.findAll();
+    }
 
 
     @GetMapping("/form")
-    public String donationForm(Model model){
-        List<Institution> institutions = institutionRepository.findAll();
-        model.addAttribute("institutions", institutions);
-
-        Donation donation = new Donation();
-        model.addAttribute("donation", donation);
-
-        List<Category> categories = categoryRepository.findAll();
-        model.addAttribute("categories", categories);
-
+    public String addDonation() {
         return "form";
     }
 
     @PostMapping("/form")
-    public String confirmForm(@ModelAttribute Donation donation){
+    String donateFormAction(@Valid @ModelAttribute("donation") Donation donation, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) return "form";
         donationRepository.save(donation);
         return "form-confirmation";
     }
+
+//    @GetMapping("/form")
+//    public String donationForm(Model model){
+//        List<Institution> institutions = institutionRepository.findAll();
+//        model.addAttribute("institutions", institutions);
+//
+//        Donation donation = new Donation();
+//        model.addAttribute("donation", donation);
+//
+//        List<Category> categories = categoryRepository.findAll();
+//        model.addAttribute("categories", categories);
+//
+//        return "form";
+//    }
+//
+//    @PostMapping("/form")
+//    public String confirmForm(@ModelAttribute Donation donation){
+//        donationRepository.save(donation);
+//        return "form-confirmation";
+//    }
 }

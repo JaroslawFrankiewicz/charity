@@ -14,6 +14,7 @@ import java.util.Set;
 
 @Component("userDetailsService")
 public class SpringDataUserDetailsService implements UserDetailsService {
+
     private UserService userService;
 
     @Autowired
