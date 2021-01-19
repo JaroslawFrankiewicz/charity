@@ -12,5 +12,6 @@ W zweryfikowane miejsca trzeba pojechać, a nie ma na to czasu lub nie ma jak ta
 - Spring Form
 - Hibernate
 - Spring Data JPA
+
 ## Wygląd strony:
 ![Layout strony](src/main/webapp/resources/images/layout_page.jpg)
