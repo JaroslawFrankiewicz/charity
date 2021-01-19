@@ -7,4 +7,10 @@ Skąd pomysł na projekt?
 - Jest wiele dostępnych rozwiązań, ale wiele z nich wymaga dodatkowego wysiłku lub nie budzą one zaufania.
 W zweryfikowane miejsca trzeba pojechać, a nie ma na to czasu lub nie ma jak tam pojechać. Natomiast kontenery pod domem lub lokalne zbiórki są niezweryfikowane i nie wiadomo czy te rzeczy faktycznie trafią do potrzebujących. 
 
+Technologie projektu:
+- Spring Boot
+- Spring Form
+- Hibernate
+- Spring Data JPA
 
+/home/jaroslaw/CodersLab/test/Charity/src/main/webapp/resources/images/layout.png
