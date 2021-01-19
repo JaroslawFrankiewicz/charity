@@ -13,4 +13,4 @@ W zweryfikowane miejsca trzeba pojechać, a nie ma na to czasu lub nie ma jak ta
 - Hibernate
 - Spring Data JPA
 ## Wygląd strony:
-![Layout strony](src/main/webapp/resources/images/layout_page.png)
+![Layout strony](src/main/webapp/resources/images/layout_page.jpg)
