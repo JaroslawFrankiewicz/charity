@@ -24,12 +24,6 @@ public class HomeController {
         this.donationRepository = donationRepository;
     }
 
-
-//    @RequestMapping("/")
-//    public String homeAction(Model model){
-//        return "index";
-//    }
-
     @ModelAttribute("institutions")
     List<Institution> institutionList() {
         return institutionRepository.findAll();

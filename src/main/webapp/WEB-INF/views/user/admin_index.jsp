@@ -5,13 +5,13 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <%@include file="../head.jsp" %>
+    <%@include file="user_head.jsp" %>
     <title>Charity Home Page</title>
 </head>
 <body>
 <header>
 </header>
-<%@include file="../header.jsp" %>
+<%@include file="user_header.jsp" %>
 <section class="stats">
     <div class="container container--85">
         <div class="stats--item">
@@ -131,7 +131,7 @@
     </div>
 
 </section>
-<%@include file="../footer.jsp" %>
+<%@include file="user_footer.jsp" %>
 <script src="<c:url value="${pageContext.request.contextPath}/resources/js/app.js"/>"></script>
 </body>
 </html>

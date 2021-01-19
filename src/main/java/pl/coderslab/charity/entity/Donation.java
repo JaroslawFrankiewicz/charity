@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -58,7 +57,4 @@ public class Donation {
     @OneToOne(mappedBy = "donation")
     private User user;
 
-//    public Donation(long id) {
-//        this.id = id;
-//    }
 }

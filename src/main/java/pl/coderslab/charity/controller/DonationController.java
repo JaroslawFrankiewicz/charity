@@ -50,29 +50,9 @@ public class DonationController {
     }
 
     @PostMapping("/form")
-    String donateFormAction(@Valid @ModelAttribute("donation") Donation donation, BindingResult bindingResult) {
+    String donateForm(@Valid @ModelAttribute("donation") Donation donation, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) return "form";
         donationRepository.save(donation);
         return "form-confirmation";
     }
-
-//    @GetMapping("/form")
-//    public String donationForm(Model model){
-//        List<Institution> institutions = institutionRepository.findAll();
-//        model.addAttribute("institutions", institutions);
-//
-//        Donation donation = new Donation();
-//        model.addAttribute("donation", donation);
-//
-//        List<Category> categories = categoryRepository.findAll();
-//        model.addAttribute("categories", categories);
-//
-//        return "form";
-//    }
-//
-//    @PostMapping("/form")
-//    public String confirmForm(@ModelAttribute Donation donation){
-//        donationRepository.save(donation);
-//        return "form-confirmation";
-//    }
 }

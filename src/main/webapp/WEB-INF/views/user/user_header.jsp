@@ -26,6 +26,11 @@
             <li><a href="#about" class="btn btn--without-border">O nas</a></li>
             <li><a href="#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
             <li><a href="#contact" class="btn btn--without-border">Kontakt</a></li>
+            <li>
+                <form action="<c:url value="/logout"/>" method="post">
+                    <a class="btn btn--without-border" href="${pageContext.request.contextPath}/logout">Wylogowanie</a>
+                </form>
+            </li>
         </ul>
     </nav>
 

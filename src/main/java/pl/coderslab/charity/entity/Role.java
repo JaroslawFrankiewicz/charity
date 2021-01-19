@@ -19,12 +19,4 @@ public class Role {
 
     private String name;
 
-//    @ManyToMany(mappedBy = "roles")
-//    private Set<User> users;
-
-
-//    @ManyToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name="user_role", joinColumns= @JoinColumn(name="ROLE_ID"), inverseJoinColumns = @JoinColumn(name="USER_ID"))
-//    private Set<User> users;
-
 }

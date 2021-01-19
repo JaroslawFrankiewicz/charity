@@ -18,7 +18,7 @@
     <%@ include file="header.jsp" %>
 <section class="login-page">
     <h2 id="login">Zaloguj się</h2>
-    <form>
+    <form method="post">
         <div class="form-group">
 <%--            <label>--%>
 <%--                <input type="email" name="email" placeholder="Email" />--%>
