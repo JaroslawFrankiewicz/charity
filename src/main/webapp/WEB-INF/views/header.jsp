@@ -12,7 +12,7 @@
 
 <header class="header--main-page">
     <div sec:authorize="isAuthenticated()">
-        This content is only shown to authenticated users.
+<%--        This content is only shown to authenticated users.--%>
     </div>
     <nav class="container container--70">
         <ul class="nav--actions">
